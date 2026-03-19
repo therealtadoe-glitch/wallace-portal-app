@@ -1,0 +1,3 @@
+; Minimal demo placeholder.
+; This pack is script-first; you can create your own demo scene by instancing these nodes.
+; Included as a file marker so the folder exists cleanly in projects.
