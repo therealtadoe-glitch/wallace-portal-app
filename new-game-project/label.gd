@@ -4,17 +4,9 @@ extends Label
 
 
 func _ready() -> void:
-	timer.wait_time = 60.0
-	timer.one_shot = false
-	timer.autostart = true
-	timer.timeout.connect(_on_minute_tick)
-
-	add_child(timer)
-
-	# Run immediately too (optional)
-	_on_minute_tick()
-
-
-func _on_minute_tick() -> void:
-	var time_text := DateTime.format_now("h:mm A")
-	print(time_text)
+	print("SYSTEM: ", Time.get_datetime_dict_from_system(true))
+	print("UNIX NOW: ", DateTime.now_unix())
+	print("FORMAT NOW: ", DateTime.format_now(DateTime.Preset.TIME_12H))
+	print("FORMAT UNIX NOW: ", DateTime.format_unix(DateTime.now_unix(), DateTime.Preset.TIME_12H))
+	text = str(DateTime.format_now(DateTime.Preset.DATETIME_SHORT_12H))
+	print(text)

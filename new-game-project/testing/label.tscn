@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cp7vw5n2bsulh" path="res://label.gd" id="1_7d7g2"]
 
+[sub_resource type="SystemFont" id="SystemFont_7d7g2"]
+font_names = PackedStringArray("SF Rounded")
+font_weight = 575
+
 [node name="Label" type="Label" unique_id=242438769]
 anchors_preset = 5
 anchor_left = 0.5
@@ -11,6 +15,9 @@ offset_top = 81.0
 offset_right = 111.0
 offset_bottom = 160.0
 grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_7d7g2")
 theme_override_font_sizes/font_size = 86
 text = "3:13 pm"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("1_7d7g2")
