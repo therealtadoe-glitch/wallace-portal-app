@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="EmployeePortalApp"
-run/main_scene="res://scenes/app/main.tscn"
+run/main_scene="uid://bka0d50qmnb8y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-AppStore="*res://scripts/autoload/app_store.gd"
-
+Firebase="*uid://cvb26atjckwlq"
+DateTime="*uid://bu5kn2gjd7ryx"
 
 [debug]
 
@@ -35,13 +35,13 @@ gdscript/warnings/empty_file=0
 
 [display]
 
-window/size/viewport_width=390
-window/size/viewport_height=844
-window/size/always_on_top=false
-window/size/transparent=false
+window/size/viewport_width=402
+window/size/viewport_height=874
+window/size/always_on_top=true
+window/size/transparent=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/per_pixel_transparency/allowed=false
+window/per_pixel_transparency/allowed=true
 
 [editor_plugins]
 
