@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/ui/equipment_screen.gd" id="1"]
+[node name="EquipmentScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="ItemOption" type="OptionButton" parent="Root"]
+unique_name_in_owner = true
+[node name="EmployeeOption" type="OptionButton" parent="Root"]
+unique_name_in_owner = true
+[node name="DaysInput" type="SpinBox" parent="Root"]
+unique_name_in_owner = true
+value = 1.0
+min_value = 1.0
+max_value = 30.0
+[node name="CondOutInput" type="LineEdit" parent="Root"]
+unique_name_in_owner = true
+text = "Good"
+[node name="NotesInput" type="TextEdit" parent="Root"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+[node name="CheckoutButton" type="Button" parent="Root"]
+text = "Check Out"
+[node name="ActiveLabel" type="RichTextLabel" parent="Root"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 90)
+[node name="HistoryLabel" type="RichTextLabel" parent="Root"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+[connection signal="pressed" from="Root/CheckoutButton" to="." method="_on_checkout_pressed"]
