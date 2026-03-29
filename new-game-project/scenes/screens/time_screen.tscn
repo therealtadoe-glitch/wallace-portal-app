@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/ui/time_screen.gd" id="1"]
+[node name="TimeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="EmployeeOption" type="OptionButton" parent="Root"]
+unique_name_in_owner = true
+[node name="StatusLabel" type="Label" parent="Root"]
+unique_name_in_owner = true
+text = "Status"
+[node name="Buttons" type="HBoxContainer" parent="Root"]
+[node name="ClockIn" type="Button" parent="Root/Buttons"]
+text = "Clock In"
+[node name="ClockOut" type="Button" parent="Root/Buttons"]
+text = "Clock Out"
+[node name="Break" type="Button" parent="Root/Buttons"]
+text = "Break"
+[node name="HistoryLabel" type="RichTextLabel" parent="Root"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+[connection signal="pressed" from="Root/Buttons/ClockIn" to="." method="_on_clock_in_pressed"]
+[connection signal="pressed" from="Root/Buttons/ClockOut" to="." method="_on_clock_out_pressed"]
+[connection signal="pressed" from="Root/Buttons/Break" to="." method="_on_break_pressed"]
+[connection signal="item_selected" from="Root/EmployeeOption" to="." method="_on_employee_option_item_selected"]

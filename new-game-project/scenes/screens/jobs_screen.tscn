@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/ui/jobs_screen.gd" id="1"]
+[node name="JobsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="FilterInput" type="OptionButton" parent="Root"]
+unique_name_in_owner = true
+[node name="JobsLabel" type="RichTextLabel" parent="Root"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+[node name="TitleInput" type="LineEdit" parent="Root"]
+unique_name_in_owner = true
+placeholder_text = "Job title"
+[node name="DescInput" type="TextEdit" parent="Root"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+[node name="LocationInput" type="LineEdit" parent="Root"]
+unique_name_in_owner = true
+placeholder_text = "Property/Location"
+[node name="Row" type="HBoxContainer" parent="Root"]
+[node name="StatusInput" type="OptionButton" parent="Root/Row"]
+unique_name_in_owner = true
+[node name="PriorityInput" type="OptionButton" parent="Root/Row"]
+unique_name_in_owner = true
+[node name="CreateButton" type="Button" parent="Root"]
+text = "Create Job"
+[connection signal="pressed" from="Root/CreateButton" to="." method="_on_create_pressed"]
+[connection signal="item_selected" from="Root/FilterInput" to="." method="_on_filter_item_selected"]
